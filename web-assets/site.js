@@ -35,6 +35,7 @@ if (progressBar && !reducedMotion()) {
       ticking = true;
     }
   }, {passive: true});
+  updateScroll();
 }
 
 if ('IntersectionObserver' in window) {
@@ -52,7 +53,7 @@ if ('IntersectionObserver' in window) {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, {threshold: 0.14});
+  }, {threshold: 0.08, rootMargin: '0px 0px -8% 0px'});
   document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
 
   const navLinks = document.querySelectorAll('[data-nav-sec]');
