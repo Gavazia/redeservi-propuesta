@@ -5,8 +5,8 @@
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Redeservi · Panel demo de seguimiento y resultados</title>
-<link rel="stylesheet" href="web-assets/site.css">
-<script src="web-assets/site.js" defer></script>
+<link rel="stylesheet" href="web-assets/site.css?v=3">
+<script src="web-assets/site.js?v=3" defer></script>
 </head>
 <body class="dashboard-body">
 <main class="dashboard-app" id="dashboard-root">
@@ -213,7 +213,7 @@
     <p class="caption">Identificamos qué formato y qué gancho generan más preguntas para orientar el mes siguiente:</p>
 
     <div class="highlight-content" id="highlight-spotlight">
-     <img class="highlight-thumb" id="highlight-thumb" data-local="web-assets/frank-scene-1.jpg" referrerpolicy="no-referrer" src="https://i.imgur.com/VEMhMF5.jpeg" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='web-assets/frank-scene-1.jpg';}" alt="Miniatura del vídeo de Frank" width="56" height="96">
+     <span class="beat-step-num" id="highlight-badge" aria-hidden="true">01</span>
      <div class="highlight-copy">
       <span class="hl-tag" id="highlight-tag">GANCHO PREGUNTA · VÍDEO ORIGINAL</span>
       <h3 id="highlight-title">Cómo organizar tu llegada a París sin estrés</h3>
@@ -227,14 +227,14 @@
 
     <div class="highlight-subgrid" role="group" aria-label="Seleccionar pieza de ejemplo para ver impacto">
      <button type="button" class="hl-mini-card is-selected" data-hl-piece="0">
-      <img data-local="web-assets/frank-scene-1.jpg" referrerpolicy="no-referrer" src="https://i.imgur.com/VEMhMF5.jpeg" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='web-assets/frank-scene-1.jpg';}" alt="" width="40" height="68">
+      <span class="beat-step-num" aria-hidden="true">01</span>
       <div>
        <b>Vídeo original · Llegada a París</b>
        <span>Explicación cercana · <b>6 consultas (Simulado)</b></span>
       </div>
      </button>
      <button type="button" class="hl-mini-card" data-hl-piece="1">
-      <img data-local="web-assets/frank-scene-3.jpg" referrerpolicy="no-referrer" src="https://i.imgur.com/r777lOv.jpeg" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='web-assets/frank-scene-3.jpg';}" alt="" width="40" height="68">
+      <span class="beat-step-num" aria-hidden="true">02</span>
       <div>
        <b>Versión adicional · Ritmo rápido</b>
        <span>Nuevo inicio en 3 s · <b>4 consultas (Simulado)</b></span>

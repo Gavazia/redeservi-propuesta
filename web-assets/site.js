@@ -571,8 +571,8 @@ if (document.getElementById('bar-chart')) {
         void spotlight.offsetWidth;
         spotlight.classList.add('hl-pop');
       }
-      const thumb = document.getElementById('highlight-thumb');
-      if (thumb) thumb.src = piece.img;
+      const badge = document.getElementById('highlight-badge');
+      if (badge) badge.textContent = '0' + (Number(btn.dataset.hlPiece || 0) + 1);
       const tag = document.getElementById('highlight-tag');
       if (tag) tag.textContent = piece.tag;
       const title = document.getElementById('highlight-title');

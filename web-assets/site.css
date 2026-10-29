@@ -62,8 +62,8 @@ p+p{margin-top:12px}
 }
 
 /* Reveal & Stagger Motion */
-[data-reveal]{opacity:1;transform:translateY(0);transition:opacity .85s var(--ease),transform .85s var(--ease)}
-.js-ready [data-reveal]:not(.is-visible){opacity:0;transform:translateY(28px)}
+[data-reveal]{opacity:1;transform:translateY(0);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.js-ready [data-reveal]:not(.is-visible){opacity:1;transform:translateY(0)}
 .js-ready [data-reveal].is-visible [data-stagger="1"]{animation:card-rise .75s var(--ease) .06s both}
 .js-ready [data-reveal].is-visible [data-stagger="2"]{animation:card-rise .75s var(--ease) .18s both}
 .js-ready [data-reveal].is-visible [data-stagger="3"]{animation:card-rise .75s var(--ease) .3s both}
@@ -844,7 +844,7 @@ p+p{margin-top:12px}
 .browser-frame{padding:7px;background:#deded4;border-radius:22px;box-shadow:0 22px 58px rgba(2,30,41,.1)}
 .browser-chrome{display:flex;justify-content:space-between;padding:8px 15px 12px;gap:15px;font-size:9px;color:#596467;font-weight:600}
 .browser-frame iframe{width:100%;border:0;background:var(--cream);display:block;border-radius:15px}
-.dashboard-frame{height:980px}
+.dashboard-frame{height:1120px}
 .dashboard-section{background:#efece0}
 
 /* Offer & Closing */

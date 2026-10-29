@@ -11,8 +11,8 @@
 <meta property="og:url" content="https://redeservi.anvazia.com">
 <meta property="og:image" content="https://redeservi.anvazia.com/web-assets/logo.png">
 <title>Frank, una propuesta para Redeservi · Anvazia</title>
-<link rel="stylesheet" href="web-assets/site.css">
-<script src="web-assets/site.js" defer></script>
+<link rel="stylesheet" href="web-assets/site.css?v=3">
+<script src="web-assets/site.js?v=3" defer></script>
 </head>
 <body>
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
@@ -355,7 +355,249 @@
   </div>
   <div class="browser-frame">
    <div class="browser-chrome" aria-hidden="true"><span>● ● ●</span><span>Anvazia × Redeservi París / Dashboard de seguimiento y revisión</span></div>
-   <iframe title="Dashboard demo con cifras simuladas, no resultados de Redeservi" src="demo.html" loading="lazy" sandbox="allow-scripts" class="dashboard-frame"></iframe>
+   <div class="dashboard-body" style="border-radius:15px"><main class="dashboard-app" id="dashboard-root">
+ <header class="dashboard-header">
+  <div class="dashboard-brand">
+   <img data-local="web-assets/logo.png" data-imgur="https://i.imgur.com/gsu6xul.png" src="web-assets/logo.png" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src=this.dataset.imgur;}" alt="Redeservi París" width="48" height="72">
+   <div>
+    <span class="small-label">ANVAZIA × REDESERVI PARÍS · PANEL DE REVISIÓN</span>
+    <h2 class="dash-main-title" style="font-size:28px;letter-spacing:-.05em;line-height:1.08;margin-top:4px;font-weight:500">Lo importante,<br>de un vistazo.</h2>
+   </div>
+  </div>
+  <div class="dashboard-header-right">
+   <span class="demo-badge"><i class="dot-live" aria-hidden="true"></i> DEMO · Datos simulados</span>
+   <button type="button" class="dash-replay-btn" id="dash-animate-btn" title="Repetir animación del dashboard">Animar métricas ↻</button>
+  </div>
+ </header>
+
+ <div class="dashboard-intro">
+  <p>Así revisaremos juntos el impacto de tus 14 piezas mensuales: consultas, reservas, embudo de atención y evolución de tus perfiles.<br><span>Cifras de ejemplo para mostrar la dinámica de trabajo · No son resultados reales ni una previsión.</span></p>
+  <div class="period-controls" role="group" aria-label="Seleccionar periodo de datos simulados">
+   <button type="button" class="selected" data-period="month" aria-pressed="true">Mes de ejemplo (14 pzs)</button>
+   <button type="button" data-period="week" aria-pressed="false">Semana de ejemplo</button>
+  </div>
+ </div>
+
+ <div id="dashboard-values" aria-live="polite">
+  <div class="metric-grid">
+   <article class="metric primary">
+    <div class="metric-top">
+     <span>Consultas</span>
+     <em class="metric-pill" id="consultations-pill">Flujo activo · Simulado</em>
+    </div>
+    <div class="metric-main-row">
+     <strong id="consultations">24</strong>
+     <svg class="mini-sparkline" viewBox="0 0 110 38" aria-hidden="true">
+      <path class="spark-fill" id="spark-consult-fill" d="M2,34 L2,26 L36,18 L72,21 L108,6 L108,34 Z"></path>
+      <path class="spark-line" id="spark-consult-line" d="M2,26 L36,18 L72,21 L108,6"></path>
+      <circle class="spark-dot" id="spark-consult-dot" cx="108" cy="6" r="3.5"></circle>
+     </svg>
+    </div>
+    <p>Personas que preguntan por traslados o tours · Simulado</p>
+   </article>
+
+   <article class="metric">
+    <div class="metric-top">
+     <span>Reservas</span>
+     <em class="metric-pill gold" id="reservations-rate">33% de consultas · Simulado</em>
+    </div>
+    <div class="metric-main-row">
+     <strong id="reservations">8</strong>
+     <div class="mini-ring-wrap" aria-hidden="true">
+      <svg class="mini-ring" viewBox="0 0 44 44">
+       <circle class="ring-bg" cx="22" cy="22" r="17"></circle>
+       <circle class="ring-fg" id="reservations-ring" cx="22" cy="22" r="17" stroke-dasharray="106.8" stroke-dashoffset="71"></circle>
+      </svg>
+      <span id="reservations-ring-label">33%</span>
+     </div>
+    </div>
+    <p>Reservas registradas tras conversación · Simulado</p>
+   </article>
+
+   <article class="metric">
+    <div class="metric-top">
+     <span>Piezas de contenido</span>
+     <em class="metric-pill subtle">Plan mensual</em>
+    </div>
+    <div class="metric-main-row">
+     <strong id="content-count">14</strong>
+     <div class="piece-stack-bars" aria-hidden="true">
+      <span class="ps-orig" title="8 originales"></span>
+      <span class="ps-ver" title="2 versiones"></span>
+      <span class="ps-graf" title="4 gráficos"></span>
+     </div>
+    </div>
+    <p id="content-label">8 originales + 2 versiones + 4 gráficos</p>
+   </article>
+
+   <article class="metric review-card">
+    <div class="metric-top">
+     <span>Acompañamiento Andy</span>
+     <em class="metric-pill dark">Incluido</em>
+    </div>
+    <div class="review-checks">
+     <span><i>✓</i> Dirección y grabación</span>
+     <span><i>✓</i> Edición + motion</span>
+     <span><i>✓</i> Revisión de resultados</span>
+    </div>
+    <p>Revisamos juntos qué contenido mueve el negocio</p>
+   </article>
+  </div>
+
+  <div class="dashboard-panels">
+   <section class="chart-panel">
+    <div class="panel-heading">
+     <div>
+      <span class="small-label">DATOS SIMULADOS · EVOLUCIÓN POR TRAMO</span>
+      <h2>Consultas y reservas</h2>
+     </div>
+     <span class="period-chip" id="period-label">Mes de ejemplo</span>
+    </div>
+    <div class="chart-legend">
+     <span><i class="leg-ink"></i>Consultas recibidas</span>
+     <span><i class="leg-gold"></i>Reservas cerradas</span>
+     <span><i class="leg-line"></i>Tendencia de interés</span>
+    </div>
+    <div class="chart-stage">
+     <svg class="chart-wave-svg" viewBox="0 0 400 150" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+       <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#875417" stop-opacity="0.24"></stop>
+        <stop offset="100%" stop-color="#875417" stop-opacity="0.0"></stop>
+       </linearGradient>
+      </defs>
+      <path id="chart-wave-area" d="M35,95 C105,65 145,55 165,65 C215,78 245,75 280,72 C320,50 350,30 370,22 L370,145 L35,145 Z" fill="url(#waveGrad)"></path>
+      <path class="wave-stroke-anim" id="chart-wave-line" d="M35,95 C105,65 145,55 165,65 C215,78 245,75 280,72 C320,50 350,30 370,22" fill="none" stroke="#875417" stroke-width="2.5" stroke-linecap="round"></path>
+     </svg>
+     <div class="bar-chart" id="bar-chart" aria-label="Mes de ejemplo: 24 consultas y 8 reservas">
+      <div class="bar-group"><div class="bar" style="height:35%" aria-label="Sem. 1: 4 consultas simuladas"><b>4</b></div><div class="bar reservation" style="height:10%" aria-label="Sem. 1: 1 reservas simuladas"><b>1</b></div><span>Sem. 1</span></div>
+      <div class="bar-group"><div class="bar" style="height:52%" aria-label="Sem. 2: 6 consultas simuladas"><b>6</b></div><div class="bar reservation" style="height:18%" aria-label="Sem. 2: 2 reservas simuladas"><b>2</b></div><span>Sem. 2</span></div>
+      <div class="bar-group"><div class="bar" style="height:43%" aria-label="Sem. 3: 5 consultas simuladas"><b>5</b></div><div class="bar reservation" style="height:18%" aria-label="Sem. 3: 2 reservas simuladas"><b>2</b></div><span>Sem. 3</span></div>
+      <div class="bar-group"><div class="bar" style="height:78%" aria-label="Sem. 4: 9 consultas simuladas"><b>9</b></div><div class="bar reservation" style="height:26%" aria-label="Sem. 4: 3 reservas simuladas"><b>3</b></div><span>Sem. 4</span></div>
+     </div>
+    </div>
+    <p class="caption">Cada columna muestra las consultas y reservas simuladas de cada tramo para detectar qué semanas generaron más interés.</p>
+   </section>
+
+   <section class="funnel-panel">
+    <div class="panel-heading">
+     <div>
+      <span class="small-label">DATOS SIMULADOS · RECORRIDO DEL CLIENTE</span>
+      <h2>De las vistas a la reserva</h2>
+     </div>
+     <span class="period-chip">Embudo ilustrativo</span>
+    </div>
+    <p class="caption">Cómo conectamos la atención en redes con conversaciones reales para Redeservi:</p>
+    <div class="funnel-steps" id="funnel-steps">
+     <div class="funnel-row">
+      <div class="funnel-meta"><span>01 · Personas que ven tus piezas</span><strong id="funnel-reach">3.420</strong></div>
+      <div class="funnel-bar-track"><div class="funnel-bar-fill f1" id="funnel-bar-1" style="width:100%"></div></div>
+     </div>
+     <div class="funnel-row">
+      <div class="funnel-meta"><span>02 · Visitas al perfil y a tu web</span><strong id="funnel-visits">186</strong></div>
+      <div class="funnel-bar-track"><div class="funnel-bar-fill f2" id="funnel-bar-2" style="width:68%"></div></div>
+     </div>
+     <div class="funnel-row">
+      <div class="funnel-meta"><span>03 · Consultas por traslado / tour</span><strong id="funnel-queries">24</strong></div>
+      <div class="funnel-bar-track"><div class="funnel-bar-fill f3" id="funnel-bar-3" style="width:44%"></div></div>
+     </div>
+     <div class="funnel-row">
+      <div class="funnel-meta"><span>04 · Reservas confirmadas</span><strong id="funnel-bookings">8</strong></div>
+      <div class="funnel-bar-track"><div class="funnel-bar-fill f4" id="funnel-bar-4" style="width:26%"></div></div>
+     </div>
+    </div>
+   </section>
+  </div>
+
+  <div class="dashboard-panels secondary-panels">
+   <section class="account-panel">
+    <div class="panel-heading">
+     <div>
+      <span class="small-label">DATOS SIMULADOS · PRESENCIA MULTICANAL</span>
+      <h2>Evolución de las cuentas</h2>
+     </div>
+     <span class="period-chip">3 canales activos</span>
+    </div>
+    <p class="caption">Variación ilustrativa de seguidores e interacción. No corresponde a tus perfiles reales todavía.</p>
+
+    <div class="account-list">
+     <div class="account-row">
+      <div class="acc-info">
+       <span class="acc-dot ig" aria-hidden="true"></span>
+       <div><b>Instagram</b><small>@redeservi_paris · Reels + Posts</small></div>
+      </div>
+      <div class="acc-bar-wrap" aria-hidden="true"><i id="ig-bar" style="width:78%"></i></div>
+      <strong id="instagram-growth">+32</strong>
+     </div>
+     <div class="account-row">
+      <div class="acc-info">
+       <span class="acc-dot fb" aria-hidden="true"></span>
+       <div><b>Facebook</b><small>Redeservi París · Reels + Comunidad</small></div>
+      </div>
+      <div class="acc-bar-wrap" aria-hidden="true"><i id="fb-bar" style="width:52%"></i></div>
+      <strong id="facebook-growth">+18</strong>
+     </div>
+     <div class="account-row">
+      <div class="acc-info">
+       <span class="acc-dot tt" aria-hidden="true"></span>
+       <div><b>TikTok</b><small>@redeservi.paris · Alcance orgánico</small></div>
+      </div>
+      <div class="acc-bar-wrap" aria-hidden="true"><i id="tt-bar" style="width:64%"></i></div>
+      <strong id="tiktok-growth">+21</strong>
+     </div>
+    </div>
+   </section>
+
+   <section class="highlight-panel">
+    <div class="panel-heading">
+     <div>
+      <span class="small-label">DATOS SIMULADOS · QUÉ REVISAREMOS JUNTOS</span>
+      <h2>Contenido destacado</h2>
+     </div>
+     <span class="period-chip">Pulsa una pieza para inspeccionar</span>
+    </div>
+    <p class="caption">Identificamos qué formato y qué gancho generan más preguntas para orientar el mes siguiente:</p>
+
+    <div class="highlight-content" id="highlight-spotlight">
+     <span class="beat-step-num" id="highlight-badge" aria-hidden="true">01</span>
+     <div class="highlight-copy">
+      <span class="hl-tag" id="highlight-tag">GANCHO PREGUNTA · VÍDEO ORIGINAL</span>
+      <h3 id="highlight-title">Cómo organizar tu llegada a París sin estrés</h3>
+      <p id="highlight-desc">Ejemplo ficticio de pieza que convierte reproducciones en mensajes directos</p>
+     </div>
+     <div class="highlight-number">
+      <strong id="highlight-count">6</strong>
+      <span>consultas de ejemplo</span>
+     </div>
+    </div>
+
+    <div class="highlight-subgrid" role="group" aria-label="Seleccionar pieza de ejemplo para ver impacto">
+     <button type="button" class="hl-mini-card is-selected" data-hl-piece="0">
+      <span class="beat-step-num" aria-hidden="true">01</span>
+      <div>
+       <b>Vídeo original · Llegada a París</b>
+       <span>Explicación cercana · <b>6 consultas (Simulado)</b></span>
+      </div>
+     </button>
+     <button type="button" class="hl-mini-card" data-hl-piece="1">
+      <span class="beat-step-num" aria-hidden="true">02</span>
+      <div>
+       <b>Versión adicional · Ritmo rápido</b>
+       <span>Nuevo inicio en 3 s · <b>4 consultas (Simulado)</b></span>
+      </div>
+     </button>
+    </div>
+   </section>
+  </div>
+ </div>
+
+ <footer class="dashboard-footer">
+  <span class="connection-dot" aria-hidden="true"></span>
+  <b>Datos reales: pendiente de conexión.</b>
+  <p>Este panel es una demostración local incluida en la propuesta de Anvazia. No accede a tus cuentas, no guarda información privada y no atribuye resultados reales antes de comenzar a trabajar juntos.</p>
+ </footer>
+ <noscript><p>JavaScript desactivado: se muestra solo el ejemplo mensual estático, sin animación ni cambio de periodo.</p></noscript>
+</main></div>
   </div>
   <p class="caption">Todas las cifras del panel son ejemplos ficticios para mostrar cómo revisaremos tu negocio. No son resultados obtenidos ni una previsión. La conexión a tus datos reales se configura al iniciar.</p>
  </div>
