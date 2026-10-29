@@ -176,11 +176,11 @@ const motionScenes = [
   },
   {
     stepBadge: 'ESCENA 04 / 04 · EL SISTEMA COMPLETO',
-    hookTag: 'PROPUESTA MENSUAL · 400 € / MES',
+    hookTag: 'PROPUESTA MENSUAL · 375 € / MES',
     hookText: 'Producción + Acompañamiento + Panel',
     label: 'SISTEMA COMPLETO · ANVAZIA × REDESERVI',
     num: '14',
-    cardTitle: 'piezas cada mes · 400 €',
+    cardTitle: 'piezas cada mes · 375 €',
     detail: '8 originales + 2 versiones + 4 posts · Grabación y revisión incluidas',
     subHtml: '<span>«</span>Revisamos juntos qué piezas generan más <em>consultas y reservas</em>.<span>»</span>',
     stepCardIdx: 2,
@@ -571,8 +571,6 @@ if (document.getElementById('bar-chart')) {
         void spotlight.offsetWidth;
         spotlight.classList.add('hl-pop');
       }
-      const badge = document.getElementById('highlight-badge');
-      if (badge) badge.textContent = '0' + (Number(btn.dataset.hlPiece || 0) + 1);
       const tag = document.getElementById('highlight-tag');
       if (tag) tag.textContent = piece.tag;
       const title = document.getElementById('highlight-title');

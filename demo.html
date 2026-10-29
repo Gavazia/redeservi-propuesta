@@ -5,8 +5,8 @@
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Redeservi · Panel demo de seguimiento y resultados</title>
-<link rel="stylesheet" href="web-assets/site.css?v=3">
-<script src="web-assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="web-assets/site.css?v=4">
+<script src="web-assets/site.js?v=4" defer></script>
 </head>
 <body class="dashboard-body">
 <main class="dashboard-app" id="dashboard-root">
@@ -213,7 +213,9 @@
     <p class="caption">Identificamos qué formato y qué gancho generan más preguntas para orientar el mes siguiente:</p>
 
     <div class="highlight-content" id="highlight-spotlight">
-     <span class="beat-step-num" id="highlight-badge" aria-hidden="true">01</span>
+     <div class="beat-step-icon" id="highlight-badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+     </div>
      <div class="highlight-copy">
       <span class="hl-tag" id="highlight-tag">GANCHO PREGUNTA · VÍDEO ORIGINAL</span>
       <h3 id="highlight-title">Cómo organizar tu llegada a París sin estrés</h3>
@@ -227,14 +229,18 @@
 
     <div class="highlight-subgrid" role="group" aria-label="Seleccionar pieza de ejemplo para ver impacto">
      <button type="button" class="hl-mini-card is-selected" data-hl-piece="0">
-      <span class="beat-step-num" aria-hidden="true">01</span>
+      <div class="beat-step-icon" aria-hidden="true">
+       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
       <div>
        <b>Vídeo original · Llegada a París</b>
        <span>Explicación cercana · <b>6 consultas (Simulado)</b></span>
       </div>
      </button>
      <button type="button" class="hl-mini-card" data-hl-piece="1">
-      <span class="beat-step-num" aria-hidden="true">02</span>
+      <div class="beat-step-icon" aria-hidden="true">
+       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
       <div>
        <b>Versión adicional · Ritmo rápido</b>
        <span>Nuevo inicio en 3 s · <b>4 consultas (Simulado)</b></span>
