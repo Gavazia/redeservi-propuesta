@@ -1,2 +1,3 @@
-# redeservi-propuesta
-Anvazia × Redeservi París — Propuesta comercial y Dashboard Demo
+# Anvazia × Redeservi París
+
+Propuesta comercial: https://redeservi.anvazia.com
